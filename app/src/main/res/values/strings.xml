@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Inventory Management</string>
+    
+    <!-- Dashboard Screen -->
+    <string name="dashboard_title">Inventory Dashboard</string>
+    <string name="total_products">Total Products</string>
+    <string name="total_items_in_stock">Total Items in Stock</string>
+    <string name="low_stock_items">Low Stock Items</string>
+    <string name="total_inventory_value">Total Inventory Value</string>
+    <string name="manage_products">Manage Products</string>
+    
+    <!-- Product List Screen -->
+    <string name="product_list">Product List</string>
+    <string name="back">Back</string>
+    <string name="add_product">Add Product</string>
+    <string name="no_products">No products yet. Add some!</string>
+    <string name="quantity">Quantity:</string>
+    <string name="decrease">Decrease</string>
+    <string name="increase">Increase</string>
+    <string name="delete">Delete</string>
+    
+    <!-- Product Detail Screen -->
+    <string name="product_details">Product Details</string>
+    <string name="description">Description</string>
+    <string name="stock_management">Stock Management</string>
+    <string name="current_stock">Current Stock:</string>
+    <string name="total_value">Total Value:</string>
+    <string name="low_stock_warning">Low Stock Warning</string>
+    
+    <!-- Add Product Screen -->
+    <string name="add_new_product">Add New Product</string>
+    <string name="save">Save</string>
+    <string name="product_name">Product Name</string>
+    <string name="price">Price</string>
+    <string name="save_product">Save Product</string>
 </resources>

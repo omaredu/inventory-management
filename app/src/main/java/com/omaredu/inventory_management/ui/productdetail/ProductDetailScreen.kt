@@ -35,6 +35,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.omaredu.inventory_management.R
+import androidx.compose.ui.res.stringResource
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -49,10 +51,10 @@ fun ProductDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Product Details") },
+                title = { Text(stringResource(id = R.string.product_details)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.back))
                     }
                 }
             )
@@ -127,7 +129,7 @@ fun ProductDetailScreen(
                                 modifier = Modifier.padding(16.dp)
                             ) {
                                 Text(
-                                    text = "Description",
+                                    text = stringResource(id = R.string.description),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold
                                 )
@@ -151,7 +153,7 @@ fun ProductDetailScreen(
                                 modifier = Modifier.padding(16.dp)
                             ) {
                                 Text(
-                                    text = "Stock Management",
+                                    text = stringResource(id = R.string.stock_management),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold
                                 )
@@ -163,7 +165,7 @@ fun ProductDetailScreen(
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
                                     Text(
-                                        text = "Current Stock:",
+                                        text = stringResource(id = R.string.current_stock),
                                         style = MaterialTheme.typography.bodyLarge
                                     )
                                     
@@ -175,7 +177,7 @@ fun ProductDetailScreen(
                                     ) {
                                         Icon(
                                             imageVector = Icons.Default.KeyboardArrowDown,
-                                            contentDescription = "Decrease"
+                                            contentDescription = stringResource(id = R.string.decrease)
                                         )
                                     }
                                     
@@ -189,7 +191,7 @@ fun ProductDetailScreen(
                                     IconButton(onClick = { viewModel.incrementQuantity() }) {
                                         Icon(
                                             imageVector = Icons.Default.KeyboardArrowUp,
-                                            contentDescription = "Increase"
+                                            contentDescription = stringResource(id = R.string.increase)
                                         )
                                     }
                                 }
@@ -202,7 +204,7 @@ fun ProductDetailScreen(
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
                                     Text(
-                                        text = "Total Value:",
+                                        text = stringResource(id = R.string.total_value),
                                         style = MaterialTheme.typography.bodyLarge
                                     )
                                     
@@ -230,7 +232,7 @@ fun ProductDetailScreen(
                                             contentAlignment = Alignment.Center
                                         ) {
                                             Text(
-                                                text = "Low Stock Warning",
+                                                text = stringResource(id = R.string.low_stock_warning),
                                                 style = MaterialTheme.typography.bodyMedium,
                                                 color = MaterialTheme.colorScheme.error,
                                                 fontWeight = FontWeight.Bold
@@ -248,6 +250,6 @@ fun ProductDetailScreen(
 }
 
 private fun formatCurrency(amount: Double): String {
-    val format = NumberFormat.getCurrencyInstance(Locale.US)
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "MX"))
     return format.format(amount)
 }

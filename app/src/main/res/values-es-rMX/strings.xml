@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Gestión de Inventario</string>
+
+    <string name="dashboard_title">Dashboard</string>
+    <string name="total_products">Inventario</string>
+    <string name="total_items_in_stock">Existencia</string>
+    <string name="low_stock_items">Stock bajo</string>
+    <string name="total_inventory_value">Valor Total</string>
+    <string name="manage_products">Administrar Productos</string>
+
+    <string name="product_list">Productos</string>
+    <string name="back">Regresar</string>
+    <string name="add_product">Agregar</string>
+    <string name="no_products">Aún no hay productos.</string>
+    <string name="quantity">Cantidad:</string>
+    <string name="decrease">Disminuir</string>
+    <string name="increase">Aumentar</string>
+    <string name="delete">Eliminar</string>
+
+    <string name="product_details">Detalle</string>
+    <string name="description">Descripción</string>
+    <string name="stock_management">Stock</string>
+    <string name="current_stock">Stock Actual:</string>
+    <string name="total_value">Valor Total:</string>
+    <string name="low_stock_warning">Alerta de Stock Bajo</string>
+
+    <string name="add_new_product">Nuevo Producto</string>
+    <string name="save">Guardar</string>
+    <string name="product_name">Nombre del Producto</string>
+    <string name="price">Precio</string>
+    <string name="save_product">Guardar Producto</string>
+</resources>

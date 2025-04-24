@@ -35,6 +35,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.omaredu.inventory_management.data.model.Product
+import com.omaredu.inventory_management.R
+import androidx.compose.ui.res.stringResource
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -51,17 +53,17 @@ fun ProductListScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Product List") },
+                title = { Text(text = stringResource(id = R.string.product_list)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.back))
                     }
                 }
             )
         },
         floatingActionButton = {
             FloatingActionButton(onClick = onNavigateToAddProduct) {
-                Icon(Icons.Default.Add, contentDescription = "Add Product")
+                Icon(Icons.Default.Add, contentDescription = stringResource(id = R.string.add_product))
             }
         }
     ) { padding ->
@@ -73,7 +75,7 @@ fun ProductListScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "No products yet. Add some!",
+                    text = stringResource(id = R.string.no_products),
                     style = MaterialTheme.typography.titleLarge
                 )
             }
@@ -144,7 +146,7 @@ fun ProductItem(
                 IconButton(onClick = onDeleteProduct) {
                     Icon(
                         imageVector = Icons.Default.Delete,
-                        contentDescription = "Delete",
+                        contentDescription = stringResource(id = R.string.delete),
                         tint = MaterialTheme.colorScheme.error
                     )
                 }
@@ -157,7 +159,7 @@ fun ProductItem(
                 modifier = Modifier.padding(top = 8.dp)
             ) {
                 Text(
-                    text = "Quantity:",
+                    text = stringResource(id = R.string.quantity),
                     style = MaterialTheme.typography.bodyMedium
                 )
                 
@@ -169,7 +171,7 @@ fun ProductItem(
                 ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowDown,
-                        contentDescription = "Decrease"
+                        contentDescription = stringResource(id = R.string.decrease)
                     )
                 }
                 
@@ -183,7 +185,7 @@ fun ProductItem(
                 IconButton(onClick = onIncreaseQuantity) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = "Increase"
+                        contentDescription = stringResource(id = R.string.increase)
                     )
                 }
             }
@@ -192,6 +194,6 @@ fun ProductItem(
 }
 
 private fun formatCurrency(amount: Double): String {
-    val format = NumberFormat.getCurrencyInstance(Locale.US)
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "MX"))
     return format.format(amount)
 }

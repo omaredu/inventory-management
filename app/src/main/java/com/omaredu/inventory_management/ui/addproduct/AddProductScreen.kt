@@ -30,6 +30,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.omaredu.inventory_management.R
+import androidx.compose.ui.res.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,10 +45,10 @@ fun AddProductScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Add New Product") },
+                title = { Text(stringResource(id = R.string.add_new_product)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.back))
                     }
                 }
             )
@@ -60,7 +62,7 @@ fun AddProductScreen(
                         }
                     }
                 ) {
-                    Icon(Icons.Default.Check, contentDescription = "Save")
+                    Icon(Icons.Default.Check, contentDescription = stringResource(id = R.string.save))
                 }
             }
         }
@@ -76,7 +78,7 @@ fun AddProductScreen(
             OutlinedTextField(
                 value = uiState.name,
                 onValueChange = { viewModel.updateName(it) },
-                label = { Text("Product Name") },
+                label = { Text(stringResource(id = R.string.product_name)) },
                 isError = uiState.nameError != null,
                 supportingText = {
                     uiState.nameError?.let {
@@ -95,7 +97,7 @@ fun AddProductScreen(
             OutlinedTextField(
                 value = uiState.description,
                 onValueChange = { viewModel.updateDescription(it) },
-                label = { Text("Description") },
+                label = { Text(stringResource(id = R.string.description)) },
                 isError = uiState.descriptionError != null,
                 supportingText = {
                     uiState.descriptionError?.let {
@@ -116,7 +118,7 @@ fun AddProductScreen(
             OutlinedTextField(
                 value = uiState.price,
                 onValueChange = { viewModel.updatePrice(it) },
-                label = { Text("Price") },
+                label = { Text(stringResource(id = R.string.price)) },
                 isError = uiState.priceError != null,
                 supportingText = {
                     uiState.priceError?.let {
@@ -136,7 +138,7 @@ fun AddProductScreen(
             OutlinedTextField(
                 value = uiState.quantity,
                 onValueChange = { viewModel.updateQuantity(it) },
-                label = { Text("Quantity") },
+                label = { Text(stringResource(id = R.string.quantity).trimEnd(':')) },
                 isError = uiState.quantityError != null,
                 supportingText = {
                     uiState.quantityError?.let {
@@ -162,7 +164,7 @@ fun AddProductScreen(
                 enabled = !uiState.isSubmitting,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Save Product")
+                Text(stringResource(id = R.string.save_product))
             }
         }
     }

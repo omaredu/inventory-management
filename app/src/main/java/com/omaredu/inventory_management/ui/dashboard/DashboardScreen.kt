@@ -28,6 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.omaredu.inventory_management.R
+import androidx.compose.ui.res.stringResource
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -42,7 +44,7 @@ fun DashboardScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Inventory Dashboard") }
+                title = { Text(stringResource(id = R.string.dashboard_title)) }
             )
         }
     ) { padding ->
@@ -66,23 +68,23 @@ fun DashboardScreen(
             
             // Stats cards
             StatsCard(
-                title = "Total Products",
+                title = stringResource(id = R.string.total_products),
                 value = dashboardState.totalProducts.toString()
             )
             
             StatsCard(
-                title = "Total Items in Stock",
+                title = stringResource(id = R.string.total_items_in_stock),
                 value = dashboardState.totalItems.toString()
             )
             
             StatsCard(
-                title = "Low Stock Items",
+                title = stringResource(id = R.string.low_stock_items),
                 value = dashboardState.lowStockCount.toString(),
                 isWarning = dashboardState.lowStockCount > 0
             )
             
             StatsCard(
-                title = "Total Inventory Value",
+                title = stringResource(id = R.string.total_inventory_value),
                 value = formatCurrency(dashboardState.totalValue)
             )
             
@@ -92,7 +94,7 @@ fun DashboardScreen(
                 onClick = onNavigateToProductList,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Manage Products")
+                Text(stringResource(id = R.string.manage_products))
                 Spacer(modifier = Modifier.weight(1f))
                 Icon(
                     imageVector = Icons.Default.ArrowForward,
@@ -135,6 +137,6 @@ fun StatsCard(
 }
 
 fun formatCurrency(amount: Double): String {
-    val format = NumberFormat.getCurrencyInstance(Locale.US)
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "MX"))
     return format.format(amount)
 }
