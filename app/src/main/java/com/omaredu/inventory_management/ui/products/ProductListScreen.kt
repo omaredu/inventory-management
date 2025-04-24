@@ -43,7 +43,8 @@ import java.util.Locale
 fun ProductListScreen(
     viewModel: ProductListViewModel = viewModel(),
     onNavigateToAddProduct: () -> Unit,
-    onNavigateToProductDetail: (String) -> Unit
+    onNavigateToProductDetail: (String) -> Unit,
+    onNavigateBack: () -> Unit = {}
 ) {
     val products by viewModel.products.collectAsState()
     
@@ -52,7 +53,7 @@ fun ProductListScreen(
             TopAppBar(
                 title = { Text("Product List") },
                 navigationIcon = {
-                    IconButton(onClick = { /* Handle back */ }) {
+                    IconButton(onClick = onNavigateBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
                 }

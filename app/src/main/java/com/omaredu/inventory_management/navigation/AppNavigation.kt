@@ -33,6 +33,9 @@ fun AppNavigation(navController: NavHostController) {
                 },
                 onNavigateToProductDetail = { productId ->
                     navController.navigate(Screen.ProductDetail.createRoute(productId))
+                },
+                onNavigateBack = {
+                    navController.popBackStack()
                 }
             )
         }
