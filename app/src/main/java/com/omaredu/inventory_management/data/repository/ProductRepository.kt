@@ -10,7 +10,6 @@ class ProductRepository {
     private val _products = MutableStateFlow<List<Product>>(emptyList())
     val products: StateFlow<List<Product>> = _products.asStateFlow()
 
-    // Add some sample initial data
     init {
         _products.value = listOf()
     }
@@ -40,7 +39,6 @@ class ProductRepository {
     }
 
     companion object {
-        // Singleton pattern for in-memory storage
         private var INSTANCE: ProductRepository? = null
 
         fun getInstance(): ProductRepository {
