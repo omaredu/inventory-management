@@ -12,26 +12,7 @@ class ProductRepository {
 
     // Add some sample initial data
     init {
-        _products.value = listOf(
-            Product(
-                name = "Laptop",
-                description = "High-performance gaming laptop",
-                price = 1299.99,
-                quantity = 5
-            ),
-            Product(
-                name = "Smartphone",
-                description = "Latest model with advanced camera",
-                price = 899.99,
-                quantity = 10
-            ),
-            Product(
-                name = "Headphones",
-                description = "Noise-cancelling wireless headphones",
-                price = 199.99,
-                quantity = 15
-            )
-        )
+        _products.value = listOf()
     }
 
     fun addProduct(product: Product) {

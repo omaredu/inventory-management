@@ -153,19 +153,6 @@ fun AddProductScreen(
             )
             
             Spacer(modifier = Modifier.height(32.dp))
-            
-            // Save button (alternative to FAB for accessibility)
-            Button(
-                onClick = {
-                    if (viewModel.saveProduct()) {
-                        onProductAdded()
-                    }
-                },
-                enabled = !uiState.isSubmitting,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(stringResource(id = R.string.save_product))
-            }
         }
     }
 }
