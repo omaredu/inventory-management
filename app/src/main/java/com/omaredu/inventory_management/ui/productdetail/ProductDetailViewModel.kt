@@ -2,6 +2,10 @@ package com.omaredu.inventory_management.ui.productdetail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.createSavedStateHandle
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.lifecycle.viewModelScope
 import com.omaredu.inventory_management.data.model.Product
 import com.omaredu.inventory_management.data.repository.ProductRepository
@@ -53,6 +57,17 @@ class ProductDetailViewModel(
                 _uiState.update { 
                     ProductDetailState.Success(updatedProduct)
                 }
+            }
+        }
+    }
+    
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                ProductDetailViewModel(
+                    savedStateHandle = createSavedStateHandle(),
+                    repository = ProductRepository.getInstance()
+                )
             }
         }
     }

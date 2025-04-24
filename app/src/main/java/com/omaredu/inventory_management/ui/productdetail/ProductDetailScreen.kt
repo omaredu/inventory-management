@@ -41,7 +41,7 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductDetailScreen(
-    viewModel: ProductDetailViewModel = viewModel(),
+    viewModel: ProductDetailViewModel = viewModel(factory = ProductDetailViewModel.Factory),
     onNavigateBack: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
